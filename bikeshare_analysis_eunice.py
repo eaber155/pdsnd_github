@@ -188,6 +188,8 @@ def time_stats(df, city, month, day_of_week):
             time taken to perform the task
     """
 
+    most_common = "Most common"
+
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -196,31 +198,31 @@ def time_stats(df, city, month, day_of_week):
     
     #if statement to check if there are month filters. Do not calculate mode if there are no month filters as there is only one month
     if month.lower() == 'all':
-        print('Most common month for {} is: {}\n'.format(city.title(), months[df['month'].mode()[0]-1].title()))
+        print('{} month for {} is: {}\n'.format(most_common, city.title(), months[df['month'].mode()[0]-1].title()))
     else:
-        print('There is no most common month as you have chosen only one month: {}\n'. format(month.title()))
+        print('There is no {} month as you have chosen only one month: {}\n'. format(most_common, month.title()))
      
     # display the most common day of week
 
     #if statment to check which filters the user has set
     if day_of_week == 'all' and month.lower() == 'all':
-        print('Most common day of week for {} is: {}\n'.format(city.title(), df['day_of_week'].mode()[0]))
+        print('{} day of week for {} is: {}\n'.format(most_common, city.title(), df['day_of_week'].mode()[0]))
     elif day_of_week == 'all' and month.lower() != 'all':
-        print('Most common day of week for {} in month {} is: {}\n'.format(city.title(), month.title(), df['day_of_week'].mode()[0]))
+        print('{} day of week for {} in month {} is: {}\n'.format(most_common, city.title(), month.title(), df['day_of_week'].mode()[0]))
     else:
-        print('There is no most common day of week as you have chosen only one day of week: {}\n'.format(day_of_week.title()))
+        print('There is no {} day of week as you have chosen only one day of week: {}\n'.format(most_common, day_of_week.title()))
 
     # display the most common start hour
 
     #if statment to check which filters the user has set
     if month.lower() != 'all' and day_of_week != 'all':
-        print('Most common start hour in {} for the month {} on the day {} is: {}\n'.format(city.title(), month.title(), day_of_week.title(), df['hour'].mode()[0]))
+        print('{} start hour in {} for the month {} on the day {} is: {}\n'.format(most_common, city.title(), month.title(), day_of_week.title(), df['hour'].mode()[0]))
     elif month == 'all' and day_of_week != 'all':
-        print('Most common start hour in {} for all months on the day {} is: {}\n'.format(city.title(), day_of_week.title(), df['hour'].mode()[0]))
+        print('{} start hour in {} for all months on the day {} is: {}\n'.format(most_common, city.title(), day_of_week.title(), df['hour'].mode()[0]))
     elif month != 'all' and day_of_week == 'all':
-        print('Most common start hour in {} for the month {} for all days of the week is: {}\n'.format(city.title(), month.title(), df['hour'].mode()[0]))
+        print('{} start hour in {} for the month {} for all days of the week is: {}\n'.format(most_common, city.title(), month.title(), df['hour'].mode()[0]))
     else:
-        print('Most common start hour in {} is: {}\n'.format(city.title(), df['hour'].mode()[0]))
+        print('{} start hour in {} is: {}\n'.format(most_common, city.title(), df['hour'].mode()[0]))
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
