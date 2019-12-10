@@ -16,6 +16,8 @@ def get_filters():
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
+
+    This filter uses various try blocks to handle exceptions
     """
 
     #Introductions. Get name and residence of user
