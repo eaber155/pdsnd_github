@@ -145,7 +145,7 @@ def load_data(city, month, day):
 
     return df
 
-def view_data(df):
+def statistics_overview(df):
     """This function displays the data in chunks of 5 rows using dictionaries nested within a list
     
     Args:
@@ -430,7 +430,7 @@ def main():
         station_stats(df, city, month, day)
         trip_duration_stats(df, city, month, day)
         user_stats(df, city, month, day)
-        print(view_data(df))
+        print(statistics_overview(df))
 
         #ask user if they want to restart program or leave
         restart = input('\nWould you like to restart? Enter yes or no.\n')
