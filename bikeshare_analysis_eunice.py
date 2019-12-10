@@ -188,6 +188,8 @@ def time_stats(df, city, month, day_of_week):
 
         returns:
             time taken to perform the task
+
+        Time information and all other statistics have taken into account whether the user filtered out for city and month or whether they did not use any filters
     """
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
