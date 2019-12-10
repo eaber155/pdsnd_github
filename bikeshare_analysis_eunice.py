@@ -420,6 +420,12 @@ def user_stats(df, city, month, day_of_week):
 
 
 def force_end_program():
+
+    """
+    Function to end the program by force
+
+    """
+    
     while True:
         break
 
