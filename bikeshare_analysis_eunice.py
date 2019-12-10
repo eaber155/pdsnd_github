@@ -276,15 +276,17 @@ def station_stats(df, city, month, day_of_week):
     #Derive the route from the Start Station and End Station Values
     df['start_end_comb'] = df['Start Station'] + " to " + df['End Station']
 
+    start_statement = "Most frequent combination of start station and end station trip in"
+
     #if statment to check which filters the user has set
     if month != 'all' and day_of_week != 'all':
-        print('Most frequent combination of start station and end station trip in {} for the month {} on the day {} is: {}\n'.format(city.title(), month.title(), day_of_week.title(), df['start_end_comb'].mode()[0]))
+        print('{} {} for the month {} on the day {} is: {}\n'.format(start_statement, city.title(), month.title(), day_of_week.title(), df['start_end_comb'].mode()[0]))
     elif month == 'all' and day_of_week != 'all':
-        print('Most frequent combination of start station and end station trip in {} for all months on the day {} is: {}\n'.format(city.title(), day_of_week.title(), df['start_end_comb'].mode()[0]))
+        print('{} {} for all months on the day {} is: {}\n'.format(start_statement, city.title(), day_of_week.title(), df['start_end_comb'].mode()[0]))
     elif month != 'all' and day_of_week == 'all':
-        print('Most frequent combination of start station and end station trip in {} for the month {} for all days of the week is: {}\n'.format(city.title(), month.title(), df['start_end_comb'].mode()[0]))
+        print('{} {} for the month {} for all days of the week is: {}\n'.format(start_statement, city.title(), month.title(), df['start_end_comb'].mode()[0]))
     else:
-        print('Most frequent combination of start station and end station trip in {} is: {}\n'.format(city.title(), df['start_end_comb'].mode()[0]))
+        print('{} {} is: {}\n'.format(start_statement, city.title(), df['start_end_comb'].mode()[0]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*80)
