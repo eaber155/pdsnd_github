@@ -8,6 +8,8 @@ Bikeshare Analysis Tool
 The program is self explanatory. Use the comments to understand the code
 Run the code in jupyter environment terminal or any terminal of your choice
 
+The bikeshare program provides an analysis of bike sharing data in three different states in the USA. The raw data is below. Bikeshare will give you more insight than what you would understand from the raw data.
+
 The bikeshare project is created using the powerful python programming language.
 
 ### Files used
